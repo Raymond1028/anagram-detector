@@ -4,30 +4,28 @@ class Anagram
     attr_accessor :word
     def initialize(word)
         @word = word
+    
     end
 
     #@anagrams = anagrams
     
-    def match(word,anagrams)
+    def match(anagram)
+    
         anagrams_1 = []
     
-        anagrams.each do |words|
+        anagram.each do |words|
             
-            if words.split.sort == @word.split.sort
+            if words.split("").sort == @word.split("").sort
                 anagrams_1 << words
             end
-            if anagrams_1 == []
-                return anagrams_1
-            else
-                return anagrams_1
-                
-            end
-        
-        end
+            
+         end
+         anagrams_1
+
     end
 end
-listen = Anagram.new(word)
-listen.match
+listen = Anagram.new("listen")
+listen.match(%w(enlists google inlets banana))
 
 
 
